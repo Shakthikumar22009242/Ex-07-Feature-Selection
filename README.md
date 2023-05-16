@@ -31,6 +31,11 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('titanic_dataset.csv')
 df
 
+df['Cabin']=df['Cabin'].fillna(df['Cabin'].mode()[0])
+df['Embarked']=df['Embarked'].fillna(df['Embarked'].mode()[0])
+df['Age']=df['Age'].fillna(df['Age'].median())
+df
+
 df.isnull().sum()
 df.describe()
 
@@ -101,10 +106,10 @@ print ("R2     :",r2_score(y_test,a_predict))
 ## Dataset
 ![](EX07-1.png)
 
-## Describe
+## Data after cleaning
 ![](EX07-2.png)
 
-## Values missing
+## Null values after cleaning 
 ![](EX07-3.png)
 
 ## After cleaning data
@@ -112,9 +117,6 @@ print ("R2     :",r2_score(y_test,a_predict))
 
 ## Heatmap
 ![](EX07-5.png)
-
-## Cleaned null values
-![](EX07-6.png)
 
 ## People survived and dead
 ![](EX07-7.png)
@@ -125,11 +127,8 @@ print ("R2     :",r2_score(y_test,a_predict))
 ## Report - Passengers
 ![](EX07-9.png)
 
-## Result Data
-![](EX07-10.png)
-
 ## Report
-![](EX07-11.png)
+![](EX07-10.png)
 
 # Result:
 
